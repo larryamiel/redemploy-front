@@ -1,0 +1,11 @@
+#app {
+    margin: 30px;
+}
+
+.nav {
+    margin-left: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    display: inline-block;
+}

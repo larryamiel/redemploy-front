@@ -1,0 +1,36 @@
+<div *ngIf="success" class="alert alert-success">
+  <strong>Success!</strong> Deleted
+</div>
+<form>
+  <div class="form-group" style="float: right; width: 30%;">
+    <input class="form-control" [(ngModel)]="term" type="text" placeholder="Search.." name="search">
+  </div>
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Title | Position</th>
+      <th scope="col">Employee Address</th>
+      <th scope="col">Employee Birthdate</th>
+      <th scope="col">Employee Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees | filter : term ">
+      <td> {{ employee.id }} </td>
+      <td> {{ employee.fullname }} </td>
+      <td> {{ employee.title }} </td>
+      <td> {{ employee.address }} </td>
+      <td> {{ employee.birthdate }} </td>
+      <td> {{ employee.gender }} </td>
+      <td>
+        <a href="show/{{ employee.id }}">Edit</a>
+      </td>
+      <td>
+        <a href="#" (click)="onDelete(employee.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
